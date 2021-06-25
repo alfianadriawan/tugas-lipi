@@ -19,3 +19,5 @@ Route::get('/', function () {
 
 Route::get('/keltian','KeltianController@index');
 Route::post('/keltian/create','KeltianController@create');
+Route::get('/keltian/{id}/edit','KeltianController@edit');
+Route::post('/keltian/{id}/update','KeltianController@update');

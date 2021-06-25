@@ -15,4 +15,15 @@ class KeltianController extends Controller
         \App\Keltian::create($request->all());
         return redirect('/keltian')->with('sukses', 'Data Berhasil Dibuat !!!');
     }
+
+    public function edit($id){
+        $keltian = \App\Keltian::find($id);
+        return view('keltian/edit', ['keltian' => $keltian]);
+    }
+
+    public function update(Request $request, $id){
+        $keltian = \App\Keltian::find($id);
+        $keltian->update($request->all());
+        return redirect('/keltian')->with('sukses', 'Data Berhasil Diupdate !!!');
+    }
 }
