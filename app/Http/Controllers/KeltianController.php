@@ -6,8 +6,12 @@ use Illuminate\Http\Request;
 
 class KeltianController extends Controller
 {
-    public function index(){
-        $data_keltian = \App\Keltian::all();
+    public function index(Request $request){
+        if ($request->has('cari')) {
+            $data_keltian = \App\Keltian::where('nama','LIKE', '%' .$request->cari. '%')->get();
+        } else {
+            $data_keltian = \App\Keltian::all();
+        }     
         return view('keltian.index', ['data_keltian' => $data_keltian]);
     }
 
@@ -25,5 +29,11 @@ class KeltianController extends Controller
         $keltian = \App\Keltian::find($id);
         $keltian->update($request->all());
         return redirect('/keltian')->with('sukses', 'Data Berhasil Diupdate !!!');
+    }
+
+    public function delete($id){
+        $keltian = \App\Keltian::find($id);
+        $keltian->delete();
+        return redirect('/keltian')->with('sukses', 'Data Berhasil Dihapus !!!');
     }
 }

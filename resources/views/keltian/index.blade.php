@@ -8,13 +8,20 @@
     </div>    
     @endif
     <div class="row">
-        <div class="col-8">
-            <h2>Kelompok Penelitian Antena Dan Propagasi LIPI</h2>
+        <div class="col-7">
+            <h3>Kelompok Penelitian Antena Dan Propagasi LIPI</h3>
         </div>
-        <div class="col-4">
-            <button type="button" class="btn btn-primary float-end" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
-                Tambahkan +
-            </button>
+        <div class="col-5">
+            <div class="d-flex flex-row justify-content-end">
+                <form class="d-flex mr-2" method="GET" action="/keltian">
+                    <input name="cari" class="form-control" type="search" placeholder="Search" aria-label="Search">
+                    <button class="btn btn-outline-success pr-2" type="submit">Search</button>
+                </form>
+                <button type="button" class="btn btn-primary mx-4" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+                    Tambahkan +
+                </button>               
+            </div>
+           
         </div>
         <table class="table table-hover mt-2 text-center">
             <tr>
@@ -30,7 +37,10 @@
                 <td>{{$keltian->agama}}</td>
                 <td>{{$keltian->jenis_kelamin}}</td>
                 <td>{{$keltian->email}}</td>
-                <td><a href="/keltian/{{$keltian->id}}/edit" class="btn btn-warning btn-sm">Edit</a></td>
+                <td>
+                    <a href="/keltian/{{$keltian->id}}/edit" class="btn btn-warning btn-sm">Edit</a>
+                    <a href="/keltian/{{$keltian->id}}/delete" class="btn btn-danger btn-sm" onclick="return confirm('Yakin menghapus data ?')">Delete</a>
+                </td>
             </tr>  
             @endforeach
         </table>
