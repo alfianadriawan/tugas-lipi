@@ -40,7 +40,7 @@
                                     <tbody>
                                         @foreach ($data_keltian as $keltian)
                                         <tr>
-                                            <td>{{$keltian->nama}}</td>
+                                            <td><a href="/keltian/{{$keltian->id}}/profile" style="color: gray">{{$keltian->nama}}</a></td>
                                             <td>{{$keltian->agama}}</td>
                                             <td>{{$keltian->jenis_kelamin}}</td>
                                             <td>{{$keltian->email}}</td>

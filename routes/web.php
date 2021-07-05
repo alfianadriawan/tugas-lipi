@@ -29,6 +29,7 @@ Route::group(['middleware' => 'auth'], function(){
     Route::get('/keltian/{id}/edit','KeltianController@edit');
     Route::post('/keltian/{id}/update','KeltianController@update');
     Route::get('/keltian/{id}/delete','KeltianController@delete');
+    Route::get('/keltian/{id}/profile','KeltianController@profile');
     
     Route::get('/artikel','ArtikelController@index');
 });
