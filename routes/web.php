@@ -14,12 +14,19 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('home');
+    return view('/home');
+});
+
+Route::get('/kontak', function () {
+    return view('/kontak');
 });
 
 Route::get('/login','AuthController@login')->name('login');
 Route::post('/postlogin','AuthController@postlogin');
 Route::get('/logout','AuthController@logout');
+
+Route::get('/penelitian', 'PenelitianController@index');
+Route::get('/kunjungan', 'KunjunganController@index');
 
 Route::group(['middleware' => 'auth'], function(){
     Route::get('/dashboard','DashboardController@index');

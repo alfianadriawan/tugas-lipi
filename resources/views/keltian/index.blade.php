@@ -21,7 +21,7 @@
                                         </form>
                                     </div>
                                     <div class="col-md-8">
-                                        <button type="button" class="btn btn-primary mx-4" data-toggle="modal" data-target="#staticBackdrop">
+                                        <button type="button" class="btn btn-primary mx-4 right" data-toggle="modal" data-target="#staticBackdrop">
                                             Tambahkan +
                                         </button>   
                                     </div>
