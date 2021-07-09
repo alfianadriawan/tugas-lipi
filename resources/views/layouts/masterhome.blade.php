@@ -65,9 +65,9 @@
                 <ul>
                   <li><i class="bx bx-chevron-right"></i> Penelitian</li>
                   <li><i class="bx bx-chevron-right"></i> Antena dan Propagasi</li>
-                  <li><i class="bx bx-chevron-right"></i> Product Management</li>
-                  <li><i class="bx bx-chevron-right"></i> Marketing</li>
-                  <li><i class="bx bx-chevron-right"></i> Graphic Design</li>
+                  <li><i class="bx bx-chevron-right"></i> Elektronika Telekomunikasi</li>
+                  <li><i class="bx bx-chevron-right"></i> Smart Sensor</li>
+                  <li><i class="bx bx-chevron-right"></i> Material & Divais Sel Surya</li>
                 </ul>
               </div>
     

@@ -32,8 +32,8 @@
                                         <tr>
                                             <th>NAMA</th>
                                             <th>AGAMA</th>
-                                            <th>JENIS KELAMIN</th>
                                             <th>EMAIL</th>
+                                            <th>ALAMAT</th>
                                             <th>AKSI</th>
                                         </tr>
                                     </thead>
@@ -42,8 +42,8 @@
                                         <tr>
                                             <td><a href="/keltian/{{$keltian->id}}/profile" style="color: gray">{{$keltian->nama}}</a></td>
                                             <td>{{$keltian->agama}}</td>
-                                            <td>{{$keltian->jenis_kelamin}}</td>
                                             <td>{{$keltian->email}}</td>
+                                            <td>{{$keltian->alamat}}</td>
                                             <td>
                                                 <a href="/keltian/{{$keltian->id}}/edit" class="btn btn-warning btn-sm">Edit</a>
                                                 <a href="/keltian/{{$keltian->id}}/delete" class="btn btn-danger btn-sm" onclick="return confirm('Yakin menghapus data ?')">Delete</a>
@@ -71,18 +71,19 @@
             <div class="modal-body">
                 <form action="/keltian/create" method="POST">
                     {{ csrf_field() }}
+                    {{-- Nama --}}
                     <div class="form-group">
                         <label for="exampleInputEmail1">Nama Lengkap</label>
                         <input name="nama" type="text" class="form-control"placeholder="Masukkan Nama">
                     </div>
-                    <div class="form-group">
-                        <label for="exampleInputEmail1">Alamat Email</label>
-                        <input name="email" type="email" class="form-control" id="exampleInputEmail1" placeholder="Masukkan Email" aria-describedby="emailHelp">
-                    </div>
+
+                    {{-- Agama --}}
                     <div class="form-group">
                         <label for="exampleInputEmail1">Agama</label>
                         <input name="agama" type="text" class="form-control"placeholder="Masukkan Agama">
                     </div>
+
+                    {{-- Jenis Kelamin --}}
                     <div class="form-group">
                         <label for="inputState">Jenis Kelamin</label>
                         <select name="jenis_kelamin" id="inputState" class="form-control">
@@ -91,6 +92,25 @@
                         <option value="P">Perempuan</option>
                         </select>
                       </div>
+
+                    {{-- Email --}}
+                    <div class="form-group">
+                        <label for="exampleInputEmail1">Alamat Email</label>
+                        <input name="email" type="email" class="form-control" id="exampleInputEmail1" placeholder="Masukkan Email" aria-describedby="emailHelp">
+                    </div>
+                    
+                    {{-- Password --}}
+                    <div class="form-group">
+                        <label for="exampleInputEmail1">Password</label>
+                        <input name="password" type="password" class="form-control" placeholder="Masukkan Password">
+                    </div>
+                    
+
+                    {{-- Alamat --}}
+                    <div class="form-group">
+                        <label for="exampleInputEmail1">Alamat</label>
+                        <textarea name="alamat" type="text" class="form-control" placeholder="Masukkan Alamat"></textarea>
+                    </div>
 
                     <div class="modal-footer">
                         <button type="button" class="btn btn-secondary" data-dismiss="modal">Tutup</button>

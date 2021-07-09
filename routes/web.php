@@ -28,9 +28,10 @@ Route::get('/logout','AuthController@logout');
 Route::get('/penelitian', 'PenelitianController@index');
 Route::get('/kunjungan', 'KunjunganController@index');
 
-Route::group(['middleware' => 'auth'], function(){
-    Route::get('/dashboard','DashboardController@index');
-    
+
+// Middleware Admin
+Route::group(['middleware' => ['auth', 'checkRole:admin']], function(){
+
     Route::get('/keltian','KeltianController@index');
     Route::post('/keltian/create','KeltianController@create');
     Route::get('/keltian/{id}/edit','KeltianController@edit');
@@ -38,6 +39,14 @@ Route::group(['middleware' => 'auth'], function(){
     Route::get('/keltian/{id}/delete','KeltianController@delete');
     Route::get('/keltian/{id}/profile','KeltianController@profile');
     
-    Route::get('/artikel','ArtikelController@index');
 });
 
+
+// Middleware Admin & Keltian
+Route::group(['middleware' => ['auth', 'checkRole:admin,keltian']], function(){
+
+    Route::get('/dashboard','DashboardController@index');
+    Route::get('/penelitiancrud','PenelitianController@indexcrud');
+    Route::get('/artikelcrud','ArtikelController@indexcrud');
+
+});

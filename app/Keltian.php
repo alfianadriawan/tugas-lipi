@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 class Keltian extends Model
 {
     protected $table = 'keltian';
-    protected $fillable = ['nama', 'email', 'agama', 'jenis_kelamin', 'avatar', 'user_id'];
+    protected $fillable = ['nama', 'avatar', 'agama', 'jenis_kelamin', 'email', 'password', 'alamat', 'user_id'];
 
     public function getAvatar(){
         if(!$this->avatar){

@@ -16,9 +16,13 @@ class CreateKeltianTable extends Migration
         Schema::create('keltian', function (Blueprint $table) {
             $table->id();
             $table->string('nama');
-            $table->string('jenis_kelamin');
-            $table->string('kontak');
             $table->string('avatar')->nullable();
+            $table->string('agama');
+            $table->string('jenis_kelamin');
+            $table->string('email');
+            $table->string('password');
+            $table->longText('alamat');
+            $table->foreignId('user_id')->constrained('users')->onDelete('cascade');
             $table->timestamps();
         });
     }

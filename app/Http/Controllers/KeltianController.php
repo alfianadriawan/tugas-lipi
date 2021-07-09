@@ -20,17 +20,16 @@ class KeltianController extends Controller
     public function create(Request $request){
         //Insert table users
         $user = new \App\User;
-        $user->role = 'admin';
+        $user->role = 'keltian';
         $user->name = $request->nama;
         $user->email = $request->email;
-        $user->password = bcrypt('123456');
+        $user->password = bcrypt($request->password);
         $user->remember_token = Str::random(60);
         $user->save();
 
         //Insert table keltian
         $request->request->add(['user_id' => $user->id]);
         $keltian = \App\Keltian::create($request->all());
-
         return redirect('/keltian')->with('sukses', 'Data Berhasil Dibuat !!!');
     }
 
