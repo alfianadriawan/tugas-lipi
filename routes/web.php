@@ -26,6 +26,8 @@ Route::post('/postlogin','AuthController@postlogin');
 Route::get('/logout','AuthController@logout');
 
 Route::get('/penelitian', 'PenelitianController@index');
+Route::get('/penelitian/{id}/detail', 'PenelitianController@detail');
+
 Route::get('/kunjungan', 'KunjunganController@index');
 
 
@@ -47,6 +49,12 @@ Route::group(['middleware' => ['auth', 'checkRole:admin,keltian']], function(){
 
     Route::get('/dashboard','DashboardController@index');
     Route::get('/penelitiancrud','PenelitianController@indexcrud');
+    Route::get('/penelitiancrud/show','PenelitianController@show');
+    Route::post('/penelitiancrud/create', 'PenelitianController@create');
+    Route::get('/penelitiancrud/{id}/edit', 'PenelitianController@edit');
+    Route::post('/penelitiancrud/{id}/update', 'PenelitianController@update');
+    Route::get('/penelitiancrud/{id}/delete', 'PenelitianController@delete');
+
     Route::get('/artikelcrud','ArtikelController@indexcrud');
 
 });

@@ -3,14 +3,60 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Penelitian;
+
 
 class PenelitianController extends Controller
 {
     public function index(Request $request){
-        return view('penelitian.index');
+        $data_penelitian = \App\Penelitian::all();
+        return view('penelitian.index', ['data_penelitian' => $data_penelitian]);
     }
 
     public function indexcrud(Request $request){
-        return view('penelitian.indexcrud');
+        $data_penelitian = \App\Penelitian::all();
+        return view('penelitian.indexcrud', ['data_penelitian' => $data_penelitian]);
     }
+
+    public function show(Request $request){
+        return view('penelitian.create');
+    }
+
+    public function create(Request $request){   
+        $penelitian = \App\Penelitian::create($request->all());
+        if ($request->hasFile('gambar')) {
+            $request->file('gambar')->move('images/', $request->file('gambar')->getClientOriginalName());
+            $penelitian->gambar = $request->file('gambar')->getClientOriginalName();
+            $penelitian->save();        
+        }
+        return redirect('/penelitiancrud')->with('sukses', 'Data Berhasil Ditambahkan !!!');
+    }
+
+    public function edit($id){
+        $penelitian = \App\Penelitian::find($id);
+        return view('penelitian.edit', ['penelitian' => $penelitian]);
+    }
+
+    public function update(Request $request, $id){
+        $penelitian = \App\Penelitian::find($id);
+        $penelitian->update($request->all());
+        if ($request->hasFile('gambar')) {
+            $request->file('gambar')->move('images/', $request->file('gambar')->getClientOriginalName());
+            $penelitian->gambar = $request->file('gambar')->getClientOriginalName();
+            $penelitian->save();        
+        }
+        return redirect('/penelitiancrud')->with('sukses', 'Data Berhasil Diupdate !!!');
+    }
+
+    public function delete($id){
+        $penelitian = \App\Penelitian::find($id);
+        $penelitian->delete();
+        return redirect('/penelitiancrud')->with('sukses', 'Data Berhasil Dihapus !!!');
+    }
+
+    public function detail($id){
+        $penelitian = \App\Penelitian::find($id);
+        return view('penelitian.detail', ['penelitian' => $penelitian]);
+    }
+    
 }

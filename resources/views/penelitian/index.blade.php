@@ -11,7 +11,7 @@
           <h2>Penelitian</h2>
 
           <ol>
-            <li><a href="index.html">Dashboard</a></li>
+            <li><a href="/">Dashboard</a></li>
             <li>Penelitian</li>
           </ol>
         </div>
@@ -23,137 +23,26 @@
       <div class="container">
         <div class="row">
           <div class="col-lg-8 entries">
+            @foreach ($data_penelitian as $penelitian)
             <article class="entry">
               <div class="entry-img">
-                <img src="assets/img/post-1.1.jpg" alt="" class="img-fluid">
+                <img src={{$penelitian->getGambar()}} alt="thumbnail" class="img-fluid">
               </div>
               <h2 class="entry-title">
-                <a href="Blog-Page1-Antena Vertical Disc Monopole Ultra Wideband untuk monitoring radar.html">Antena Vertical Disc Monopole Ultra Wideband untuk monitoring radar
-                  </a>
+                <a href="/penelitian/{{$penelitian->id}}/detail">{{$penelitian->judul}}</a>
               </h2>
-              <div class="entry-meta">
-                <ul>
-                  <li class="d-flex align-items-center"><i class="icofont-user"></i> <a href="Blog-Page1-Antena Vertical Disc Monopole Ultra Wideband untuk monitoring radar.html">LIPI
-                      </a></li>
-                  <li class="d-flex align-items-center"><i class="icofont-wall-clock"></i> <a href="Blog-Page1-Antena Vertical Disc Monopole Ultra Wideband untuk monitoring radar.html"><time datetime="2020-01-01">Jan 1, 2020</time></a></li>
-                  <li class="d-flex align-items-center"><i class="icofont-comment"></i> <a href="Blog-Page1-Antena Vertical Disc Monopole Ultra Wideband untuk monitoring radar.html">12
-                      Comments</a></li>
-                </ul>
-              </div>
+              
+              
               <div class="entry-content">
                 <p>
-                  Perancangan antena vertical disc monopole yang terbuat dari bahan plat kuningan (brass) 
-                  dengan karakteristik ultra wideband (UWB) yang beroperasi pada frekuensi 2 - 18 Ghz dan 
-                  memiliki bandwidth yang lebar pada VSWR ≤ 2 , p olaradiasi omni directional, polarisasi 
-                  linear , Gain 2 dB , Return Loss ≤ - 9.54 dB , Impedansi terminal 50 Ω dan b andwidth 25% 
-                  dari frekuensi kerja . Antena ini memiliki prinsip kerja hanya sebagai receive (penerima) saja.
+                 {{substr($penelitian->deskripsi, 0, 300)}}
                 </p>
                 <div class="read-more">
-                  <a href="Blog-Page1-Antena Vertical Disc Monopole Ultra Wideband untuk monitoring radar.html">Selengkapnya...</a>
+                  <a href="/penelitian/{{$penelitian->id}}/detail">Selengkapnya...</a>
                 </div>
               </div>
             </article>
-            <article class="entry">
-              <div class="entry-img">
-                <img src="assets/img/post-2.2.jpg" alt="" class="img-fluid">
-              </div>
-              <h2 class="entry-title">
-                <a href="Blog-Page1-Antena logarithmic spiral pada frekuensi kerja 400 MHz- 4 GHz untuk high frecuency detector.html">Antena logarithmic spiral pada frekuensi kerja 400 MHz- 4 GHz 
-                untuk high frecuency detector </a>
-              </h2>
-              <div class="entry-meta">
-                <ul>
-                  <li class="d-flex align-items-center"><i class="icofont-user"></i> <a href="Blog-Page1-Antena logarithmic spiral pada frekuensi kerja 400 MHz- 4 GHz untuk high frecuency detector.html">LIPI
-                      </a></li>
-                  <li class="d-flex align-items-center"><i class="icofont-wall-clock"></i> <a href="Blog-Page1-Antena logarithmic spiral pada frekuensi kerja 400 MHz- 4 GHz untuk high frecuency detector.html"><time datetime="2020-01-01">Jan 1, 2020</time></a></li>
-                  <li class="d-flex align-items-center"><i class="icofont-comment"></i> <a href="Blog-Page1-Antena logarithmic spiral pada frekuensi kerja 400 MHz- 4 GHz untuk high frecuency detector.html">12
-                      Comments</a></li>
-                </ul>
-              </div>
-              <div class="entry-content">
-                <p>
-                   Antena logarithmic spiral adalah salah satu pengembangan dari antena conical spiral 
-                   yang berbentuk planar sehingga memiliki pola radiasi bidirectional. Antena ini memiliki 
-                   jangkauan frekuensi 0,4 sampai 3,8 GHz untuk mendapatkan koefisien pantul lebih besar dari -10 dB. 
-                   Antena logarithmic spiral digunakan untuk komunikasi broadband, dalam hal ini untuk High Frequency 
-                   Detector. Frekuensi yang digunakan adalah frekuensi antara 400 MHz – 4 GHz.
-                </p>
-                <div class="read-more">
-                  <a href="Blog-Page1-Antena logarithmic spiral pada frekuensi kerja 400 MHz- 4 GHz untuk high frecuency detector.html">Selengkapnya...</a>
-                </div>
-              </div>
-            </article>
-            <article class="entry">
-              <div class="entry-img">
-                <img src="assets/img/post-3.3.jpg" alt="" class="img-fluid">
-              </div>
-
-              <h2 class="entry-title">
-                <a href="Blog-Page1-Antena vivaldi untuk rectenna pada UHF 470-806 MHz.html">Antena vivaldi untuk rectenna pada UHF 470-806 MHz</a>
-              </h2>
-
-              <div class="entry-meta">
-                <ul>
-                  <li class="d-flex align-items-center"><i class="icofont-user"></i> <a href="Blog-Page1-Antena vivaldi untuk rectenna pada UHF 470-806 MHz.html">LIPI
-                      </a></li>
-                  <li class="d-flex align-items-center"><i class="icofont-wall-clock"></i> <a href="Blog-Page1-Antena vivaldi untuk rectenna pada UHF 470-806 MHz.html"><time datetime="2020-01-01">Jan 1, 2020</time></a></li>
-                  <li class="d-flex align-items-center"><i class="icofont-comment"></i> <a href="Blog-Page1-Antena vivaldi untuk rectenna pada UHF 470-806 MHz.html">12
-                      Comments</a></li>
-                </ul>
-              </div>
-
-              <div class="entry-content">
-                <p>
-                  Salah satu aplikasi energy harvesting yang memanfaatkan gelombang radio sebagai sumber 
-                  adalah rectifying antenna (rectenna). Gelombang radio yang ada di udara bebas diterima oleh 
-                  antena dan kemudian diubah menjadi tegangan DC. Penelitian  ini merancang sistem 
-                  rectenna sederhana yang terdiri dari antena dan rectifier. Antena yang dirancang merupakan 
-                  antena mikrostrip vivaldi berjenis tapered slot dan bisa beroperasi pada sinyal TV UHF frekuensi 
-                  470-806 MHz
-                </p>
-                <div class="read-more">
-                  <a href="Blog-Page1-Antena vivaldi untuk rectenna pada UHF 470-806 MHz.html">Selengkapnya... </a>
-                </div>
-              </div>
-
-            </article>
-
-            <article class="entry">
-
-              <div class="entry-img">
-                <img src="assets/img/post-4.4.jpg" alt="" class="img-fluid">
-              </div>
-
-              <h2 class="entry-title">
-                <a href="Blog-Page1-Antena slot waveguide delapan slot pada frekuensi 3,6 GHz untuk aplikasi WLAN.html">Antena slot waveguide delapan slot pada frekuensi 3,6 GHz untuk 
-                aplikasi WLAN</a>
-              </h2>
-
-              <div class="entry-meta">
-                <ul>
-                  <li class="d-flex align-items-center"><i class="icofont-user"></i> <a href="Blog-Page1-Antena slot waveguide delapan slot pada frekuensi 3,6 GHz untuk aplikasi WLAN.html">LIPI
-                      </a></li>
-                  <li class="d-flex align-items-center"><i class="icofont-wall-clock"></i> <a href="Blog-Page1-Antena slot waveguide delapan slot pada frekuensi 3,6 GHz untuk aplikasi WLAN.html"><time datetime="2020-01-01">Jan 1, 2020</time></a></li>
-                  <li class="d-flex align-items-center"><i class="icofont-comment"></i> <a href="Blog-Page1-Antena slot waveguide delapan slot pada frekuensi 3,6 GHz untuk aplikasi WLAN.html">12
-                      Comments</a></li>
-                </ul>
-              </div>
-
-              <div class="entry-content">
-                <p>
-                  Antena slot waveguide untuk aplikasi WLAN pada frekuensi 3,6 GHz, dimana frekuensi disesuaikan 
-                  dengan standar IEEE 802.11y-2008. Bahan yang digunakan pada perancangan antena adalah waveguide persegi
-                  dari bahan kuningan. Spesifikasi awal yang diinginkan dalam merealisasikan antena slot waveguide ini adalah 
-                  frekuensi kerja 3,6 GHz, gain antena > 5 dB, VSWR < 1,5 dan impedansi saluran 50 Ω. Ukuran waveguide 
-                  disesuaikan dengan frekuensi yang digunakan, dengan frekuensi 3,6 GHz, maka waveguide yang digunakan 
-                  bertipe WR229 dengan a = 2,290 inch dan b = 1,145 inch.
-                </p>
-                <div class="read-more">
-                  <a href="Blog-Page1-Antena slot waveguide delapan slot pada frekuensi 3,6 GHz untuk aplikasi WLAN.html">Selengkapnya...</a>
-                </div>
-              </div>
-
-            </article>
+            @endforeach
 
             <div class="blog-pagination">
               <ul class="justify-content-center">
@@ -252,4 +141,4 @@
     </section>
   </main>
 
-  @stop
+  @endsection
