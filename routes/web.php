@@ -48,6 +48,7 @@ Route::group(['middleware' => ['auth', 'checkRole:admin']], function(){
 Route::group(['middleware' => ['auth', 'checkRole:admin,keltian']], function(){
 
     Route::get('/dashboard','DashboardController@index');
+
     Route::get('/penelitiancrud','PenelitianController@indexcrud');
     Route::get('/penelitiancrud/show','PenelitianController@show');
     Route::post('/penelitiancrud/create', 'PenelitianController@create');
@@ -55,6 +56,11 @@ Route::group(['middleware' => ['auth', 'checkRole:admin,keltian']], function(){
     Route::post('/penelitiancrud/{id}/update', 'PenelitianController@update');
     Route::get('/penelitiancrud/{id}/delete', 'PenelitianController@delete');
 
-    Route::get('/artikelcrud','ArtikelController@indexcrud');
+    Route::get('/kunjungancrud','KunjunganController@indexcrud');
+    Route::get('/kunjungancrud/show','KunjunganController@show');
+    Route::post('/kunjungancrud/create','KunjunganController@create');
+    Route::get('/kunjungancrud/{id}/edit','KunjunganController@edit');
+    Route::post('/kunjungancrud/{id}/update','KunjunganController@update');
+    Route::get('/kunjungancrud/{id}/delete','KunjunganController@delete');
 
 });
