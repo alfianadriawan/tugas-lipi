@@ -79,43 +79,23 @@
                 </ul>
 
               </div>
-
               <h3 class="sidebar-title">Recent Posts</h3>
+              @foreach ($recent_penelitian as $rpenelitian)
               <div class="sidebar-item recent-posts">
                 <div class="post-item clearfix">
-                  <img src="assets/img/posts-1.jpg" alt="">
-                  <h4><a href="blog-single.html">Antena Mikrostrip Fraktal Sierpinski Gasket MIMO pada range
-                  frekuensi 2,6- 2,7 GHz</a></h4>
-                  <time datetime="2020-01-01">Jan 1, 2020</time>
-                </div>
+                  <span><p style="font-size: 14px" class="text-secondary">{{date('M d, Y', strtotime($rpenelitian->created_at))}}</p></span>
+                  <img src="{{$rpenelitian->getGambar()}}" style="height: 70px"  alt="thumbnail">
+                  <h4>
+                    <a href="/penelitian/{{$rpenelitian->id}}/detail">
+                      <p class="text-decoration-none">
+                        {{$rpenelitian->judul}}
+                      </p>
+                    </a>
+                  </h4>
+                  </div>
 
-                <div class="post-item clearfix">
-                  <img src="assets/img/posts-2.jpg" alt="">
-                  <h4><a href="blog-single.html">Antena Mikrostrip Patch Rectangular pada frekuensi 9,4 GHz 
-                  untuk aplikasi radar pengawas pantai</a></h4>
-                  <time datetime="2020-01-01">Jan 1, 2020</time>
-                </div>
-
-                <div class="post-item clearfix">
-                  <img src="assets/img/posts-3.jpg" alt="">
-                  <h4><a href="blog-single.html">Antena Mikrostrip Flanar Fourtears 2 catuan pada frekuensi 
-                  2,3-2,5 GHz</a></h4>
-                  <time datetime="2020-01-01">Jan 1, 2020</time>
-                </div>
-
-                <div class="post-item clearfix">
-                  <img src="assets/img/posts-4.jpg" alt="">
-                  <h4><a href="blog-single.html">Antena mikrostrip 4 larik dipole pada frekuensi 2.1 GHz untuk aplikasi LTE</a></h4>
-                  <time datetime="2020-01-01">Jan 1, 2020</time>
-                </div>
-
-                <div class="post-item clearfix">
-                  <img src="assets/img/posts-5.jpg" alt="">
-                  <h4><a href="blog-single.html">Antena MIMO 4x4 mikrostrip patch persegi panjang 5,2 GHz untuk
-                  wifi 802.11N</a></h4>
-                  <time datetime="2020-01-01">Jan 1, 2020</time>
-                </div>
               </div>
+              @endforeach
 
               <h3 class="sidebar-title">Tags</h3>
               <div class="sidebar-item tags">

@@ -2033,7 +2033,6 @@ section {
 }
 
 .blog .blog-pagination li span {
-    border: 1px solid #7b9bab;
     margin: 0 5px;
     transition: 0.3s;
 }

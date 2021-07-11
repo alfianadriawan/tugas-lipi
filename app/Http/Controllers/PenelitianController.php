@@ -10,15 +10,17 @@ class PenelitianController extends Controller
 {
     public function index(Request $request){
         if ($request->has('cari')) {
-            $data_penelitian = \App\Penelitian::where('judul','LIKE', '%' .$request->cari. '%')->get();
+            $data_penelitian = Penelitian::where('judul','LIKE', '%' .$request->cari. '%')->get();
         } else {
-            $data_penelitian = \App\Penelitian::orderBy('id', 'desc')->paginate(3);
+            $data_penelitian = Penelitian::orderBy('id', 'desc')->paginate(3);
+            $recent_penelitian = Penelitian::orderBy('id', 'desc')->limit(5)->get();
         }     
-        return view('penelitian.index', ['data_penelitian' => $data_penelitian]);
+
+        return view('penelitian.index', ['data_penelitian' => $data_penelitian], ['recent_penelitian' => $recent_penelitian]);
     }
 
     public function indexcrud(Request $request){
-        $data_penelitian = \App\Penelitian::orderBy('id', 'desc')->get();
+        $data_penelitian = Penelitian::orderBy('id', 'desc')->get();
         return view('penelitian.indexcrud', ['data_penelitian' => $data_penelitian]);
     }
 
@@ -27,7 +29,7 @@ class PenelitianController extends Controller
     }
 
     public function create(Request $request){   
-        $penelitian = \App\Penelitian::create($request->all());
+        $penelitian = Penelitian::create($request->all());
         if ($request->hasFile('gambar')) {
             $request->file('gambar')->move('images/', $request->file('gambar')->getClientOriginalName());
             $penelitian->gambar = $request->file('gambar')->getClientOriginalName();
@@ -37,12 +39,12 @@ class PenelitianController extends Controller
     }
 
     public function edit($id){
-        $penelitian = \App\Penelitian::find($id);
+        $penelitian = Penelitian::find($id);
         return view('penelitian.edit', ['penelitian' => $penelitian]);
     }
 
     public function update(Request $request, $id){
-        $penelitian = \App\Penelitian::find($id);
+        $penelitian = Penelitian::find($id);
         $penelitian->update($request->all());
         if ($request->hasFile('gambar')) {
             $request->file('gambar')->move('images/', $request->file('gambar')->getClientOriginalName());
@@ -53,13 +55,13 @@ class PenelitianController extends Controller
     }
 
     public function delete($id){
-        $penelitian = \App\Penelitian::find($id);
+        $penelitian = Penelitian::find($id);
         $penelitian->delete();
         return redirect('/penelitiancrud')->with('sukses', 'Data Berhasil Dihapus !!!');
     }
 
     public function detail($id){
-        $penelitian = \App\Penelitian::find($id);
+        $penelitian = Penelitian::find($id);
         return view('penelitian.detail', ['penelitian' => $penelitian]);
     }
     
