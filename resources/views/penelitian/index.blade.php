@@ -42,27 +42,27 @@
                 </div>
               </div>
             </article>
+
             @endforeach
+
+           
 
             <div class="blog-pagination">
               <ul class="justify-content-center">
-                <li class="disabled"><i class="icofont-rounded-left"></i></li>
-                <li class="active" ><a href="kunjungan.html">1</a></li>
-                <li><a href="blogpage2.html">2</a></li>
-                <li><a href="blogpage3.html">3</a></li>
-                <li><a href="#"><i class="icofont-rounded-right"></i></a></li>
+                {{$data_penelitian->links()}}
               </ul>
             </div>
 
           </div>
+
 
           <div class="col-lg-4">
             <div class="sidebar">
 
               <h3 class="sidebar-title">Search</h3>
               <div class="sidebar-item search-form">
-                <form action="">
-                  <input type="text">
+                <form method="GET" action="/penelitian">
+                  <input name="cari" type="text" value="">
                   <button type="submit"><i class="icofont-search"></i></button>
                 </form>
               </div>

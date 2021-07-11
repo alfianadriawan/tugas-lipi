@@ -22,8 +22,8 @@ html {
 
 body {
     background-color: #f3f5f8;
-    font-family: "Source Sans Pro", sans-serif;
-    font-size: 15px;
+    font-family: "Open Sans", sans-serif;
+    font-size: 14px;
     color: #676a6d;
 }
 
@@ -78,7 +78,7 @@ footer {
     width: 260px;
     height: 100%;
     float: left;
-    background-color: #222831;
+    background-color: rgba(30, 67, 86, 0.9);
     position: fixed;
     left: 0;
 }
@@ -121,7 +121,7 @@ footer {
 }
 
 .layout-fullwidth #wrapper .btn-toggle-fullwidth {
-    color: #00aaff;
+    color: rgba(30, 67, 86, 0.9);
 }
 
 .offcanvas-active #wrapper .sidebar {
@@ -145,7 +145,7 @@ footer {
         left: 0 !important;
     }
     #wrapper .btn-toggle-fullwidth {
-        color: #00aaff;
+        color: rgba(30, 67, 86, 0.9);
     }
     .btn-toggle-minified {
         display: none;

@@ -9,12 +9,16 @@ use App\Penelitian;
 class PenelitianController extends Controller
 {
     public function index(Request $request){
-        $data_penelitian = \App\Penelitian::all();
+        if ($request->has('cari')) {
+            $data_penelitian = \App\Penelitian::where('judul','LIKE', '%' .$request->cari. '%')->get();
+        } else {
+            $data_penelitian = \App\Penelitian::orderBy('id', 'desc')->paginate(3);
+        }     
         return view('penelitian.index', ['data_penelitian' => $data_penelitian]);
     }
 
     public function indexcrud(Request $request){
-        $data_penelitian = \App\Penelitian::all();
+        $data_penelitian = \App\Penelitian::orderBy('id', 'desc')->get();
         return view('penelitian.indexcrud', ['data_penelitian' => $data_penelitian]);
     }
 

@@ -44,55 +44,47 @@
       <div class="vertical-align-wrap">
         <div class="vertical-align-middle">
           <div class="auth-box">
-            <div class="left">
-              <div class="content">
-                <div class="header">
-                  <div class="logo text-center">
-                    <img src="{{asset('admin/assets/img/logo-lipi.png')}}" alt="Lipi Logo" />
-                  </div>
-                  <p class="lead">Login</p>
+            <div class="content container">
+              <div class="header">
+                <div class="logo text-center">
+                  <img src="{{asset('admin/assets/img/logo-dark.png')}}" alt="Lipi Logo" />
                 </div>
-                <form class="form-auth-small" action="/postlogin" method="POST">
-                    {{ csrf_field() }}
-                  <div class="form-group">
-                    <label for="signin-email" class="control-label sr-only"
-                      >Email</label
-                    >
-                    <input
-                      name="email"
-                      type="email"
-                      class="form-control"
-                      id="signin-email"
-                      placeholder="Email"
-                    />
-                  </div>
-                  <div class="form-group">
-                    <label for="signin-password" class="control-label sr-only"
-                      >Password</label
-                    >
-                    <input
-                      name="password"
-                      type="password"
-                      class="form-control"
-                      id="signin-password"
-                      placeholder="Password"
-                    />
-                  </div>
-                  <button
-                    type="submit"
-                    class="btn btn-primary btn-lg btn-block"
+                <p class="lead">Login</p>
+              </div>
+              <form class="form-auth-small" action="/postlogin" method="POST">
+                  {{ csrf_field() }}
+                <div class="form-group">
+                  <label for="signin-email" class="control-label sr-only"
+                    >Email</label
                   >
-                    LOGIN
-                  </button>
-                </form>
-              </div>
+                  <input
+                    name="email"
+                    type="email"
+                    class="form-control"
+                    id="signin-email"
+                    placeholder="Email"
+                  />
+                </div>
+                <div class="form-group">
+                  <label for="signin-password" class="control-label sr-only"
+                    >Password</label
+                  >
+                  <input
+                    name="password"
+                    type="password"
+                    class="form-control"
+                    id="signin-password"
+                    placeholder="Password"
+                  />
+                </div>
+                <button
+                  type="submit"
+                  class="btn btn-primary btn-lg btn-block"
+                >
+                  LOGIN
+                </button>
+              </form>
             </div>
-            <div class="right">
-              <div class="overlay"></div>
-              <div class="content text">
-                <h1 class="heading">Website Kelompok Penelitian Antena Dan Propagasi P2ET</h1>
-                <p>by Anak Magang Tel-U</p>
-              </div>
             </div>
             <div class="clearfix"></div>
           </div>
