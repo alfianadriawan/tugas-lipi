@@ -2,7 +2,6 @@
 
 namespace App\Http\Controllers;
 
-use App\Keltian;
 use Illuminate\Http\Request;
 use \App\Kunjungan;
 
@@ -19,7 +18,7 @@ class KunjunganController extends Controller
         return view('kunjungan.index', ['data_kunjungan' => $data_kunjungan], ['recent_kunjungan' => $recent_kunjungan]);
     }
 
-    public function indexcrud(Request $request)
+    public function indexcrud()
     {
         $data_kunjungan = Kunjungan::orderBy('id', 'desc')->get();
         return view('kunjungan.indexcrud', ['data_kunjungan' => $data_kunjungan]);

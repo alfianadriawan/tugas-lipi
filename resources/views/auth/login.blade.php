@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en" class="fullscreen-bg">
   <head>
-    <title>Login | Klorofil - Free Bootstrap Dashboard Template</title>
+    <title>Lipi | Login</title>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
     <meta
@@ -28,13 +28,13 @@
     <link
       rel="apple-touch-icon"
       sizes="76x76"
-      href="{{asset('admin/assets/img/apple-icon.png')}}"
+      href="{{asset('admin/assets/img/logo-lipi.png')}}"
     />
     <link
       rel="icon"
       type="image/png"
       sizes="96x96"
-      href="{{asset('admin/assets/img/favicon.png')}}"
+      href="{{asset('admin/assets/img/logo-lipi.png')}}"
     />
   </head>
 

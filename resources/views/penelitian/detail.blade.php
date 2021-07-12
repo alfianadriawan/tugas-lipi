@@ -22,7 +22,7 @@
             <div class="container">
                 <div class="jumbotron">
                     <h1 class="display-5 text-uppercase mt-n3">{{$penelitian->judul}}</h1>
-                    <span class="badge badge-primary">{{$penelitian->status}} - {{$penelitian->created_at}}</span>
+                    <span class="badge badge-primary text-uppercase">{{$penelitian->status}} - {{date('d M Y', strtotime($penelitian->created_at))}}</span>
                     
                     <hr class="my-4">
                     <img class="mx-auto d-block" src="{{$penelitian->getGambar()}}" alt="thumbnail">
